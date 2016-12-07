@@ -32,9 +32,17 @@
     };
 
     Fixtures.getAlbum = function() {
-        return albumPicasso;
+      return albumPicasso;
     };
-          
+
+    Fixtures.getCollection = function(nsize){
+      this.albums = [];
+      for (var i = 0; i < nsize; i++) {
+          this.albums.push(angular.copy(albumPicasso));
+      }
+      return this.albums;
+    };
+
     return Fixtures;
   }
 
